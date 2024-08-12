@@ -1,0 +1,21 @@
+// mysql login
+mysql -u user -p
+
+// create a new mysql user
+CREATE USER 'apps'@'%' IDENTIFIED BY 'your_password';
+
+// giver user="apps" access to all databases
+GRANT ALL PRIVILEGES ON *.* TO 'apps'@'%';
+
+// change user password
+ALTER USER 'apps'@'localhost' IDENTIFIED BY 'new_password';
+
+// flush to apply changes
+FLUSH PRIVILEGES;
+
+// exit mysql back to bash
+exit
+
+// restart mariadb mysql
+sudo systemctl restart mariadb
+

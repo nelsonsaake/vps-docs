@@ -1,0 +1,23 @@
+// create a new apache2 config file 
+sudo nano /etc/apache2/sites-available/subdomain.example.com.conf
+
+// configure your apache2 config file
+// for an app running on port 3001
+// file name: subdomain.example.com.conf
+<VirtualHost *:80>
+    ServerName subdomain.example.com
+
+    ProxyPreserveHost On
+    ProxyPass / http://localhost:3001/
+    ProxyPassReverse / http://localhost:3001/
+</VirtualHost>
+
+
+// this is were active config files are added to let your website work
+/etc/apache2/sites-enabled/
+
+// this will add your config file to /etc/apache2/sites-enabled/
+sudo a2ensite subdomain.example.com.conf
+
+// restart apache2
+sudo systemctl reload apache2

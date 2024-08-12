@@ -1,0 +1,4 @@
+git remote add origin user@ip:path/to/bar/repository.git
+eg. git remote add contambo root@167.86.106.203:/root/apps/attendance2000/repository.git 
+
+git push contambo main

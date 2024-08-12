@@ -1,0 +1,4 @@
+// post-receive template
+#!/bin/bash
+unset GIT_DIR
+/home/apps/nextjs-chat/deploy.sh

@@ -1,0 +1,7 @@
+# What is a daemon?
+A daemon is a background process or service in Unix-like operating systems that runs independently of any direct user interaction.
+
+# How to handle kinsing?
+https://www.createit.com/blog/kinsing-malware-kdevtmpfsi-how-to-kill/
+https://koacervate.blogspot.com/2020/05/your-containers-cpu-usage-is-more-than.html?m=0
+

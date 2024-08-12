@@ -1,0 +1,17 @@
+# enable myappservice service
+sudo systemctl enable myappservice
+
+# start myappservice service
+sudo systemctl start myappservice
+
+# check status of myappservice service
+sudo systemctl status myappservice
+
+# check status of myappservice service
+journalctl -u myappservice
+
+# restart system 
+sudo systemctl daemon-reload
+
+# restart myappservice service
+sudo systemctl restart myappservice

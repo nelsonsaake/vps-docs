@@ -1,0 +1,141 @@
+// rename dir ubuntu
+mv old-name new-name
+
+// check system resources status / taskmanager
+top
+
+// find process running on port 3000
+sudo ss -tunlp | grep 3000
+
+// kill all process for progres user
+pkill -u username postgres
+
+// download file from <url>
+wget <url>
+
+// remove all access to <file>
+sudo chmod 000 <file>
+
+// clear <file>
+echo -n > <file>
+
+// see the list of active users 
+who
+
+// see the list of active users 
+ps aux | grep terminal
+
+// see the list of active users 
+pgrep -fl terminal
+
+// add new user
+sudo adduser ftpuser
+
+// give user="apps" access to dir="/home/apps"
+sudo chown apps /home/apps
+
+// give user="apps" access to dir="/home/apps" and also access to it's sub directories
+sudo chown -R apps /home/apps
+
+// change username
+sudo usermod -l new_username old_username
+
+// change user dir
+sudo usermod -d ftpuser ftpuser
+
+// change finger information, that's fullname, phonenumber...
+sudo chfn apps
+
+// delete a folder
+rm -r folder_name
+
+// ftp into a system
+ftp -n <ip> -u <username> -p 
+
+// ftp into a system
+ftp <ip>
+
+// grant a file executable permission
+chmod +x your_binary_file
+
+// gen symbolic link
+ln -s /path/to/source /path/to/destination
+
+// restart vsftpd
+sudo systemctl restart apache2
+
+// enable an apache2 site
+sudo a2ensite mysql.conf
+
+// disaable an apache2 site
+sudo a2dissite mysql.conf
+
+// download file with curl 
+curl -O <URL>
+
+// download file with curl, with a name
+curl -o <output_filename> <URL>
+
+// check os specs, check os version
+lsb_release -a
+
+// unistall certbot, I installed it with apt
+sudo apt remove certbot
+
+// remove un-used packages
+sudo apt autoremove
+
+// generate ssl but don't update conf file
+sudo certbot certonly --nginx -d <domain>
+
+// path of the generated certbot ssl
+cert /etc/letsencrypt/live/<domain>/fullchain.pem
+key /etc/letsencrypt/live/<domain>/privkey.pem
+
+// enable service file
+sudo systemctl enable your_service_file.service
+
+// add user to user_group
+sudo usermod -aG group_name username
+
+// change user primary group
+sudo usermod -g group_name username
+
+// see the member in a user_group 
+getent group <group_name>
+
+// see the list of all groups
+getent group
+
+// change proftpd user group
+sudo ftpasswd --group --name=apps --gid=1002
+
+// check user group id
+getent group ftp-user
+
+// change proftpd user password
+sudo ftpasswd --passwd --name=username
+
+// see the list of env
+env
+
+// copy file from local machine to vps
+scp /path/to/local/file username@hostname:/path/to/destination/directory
+
+// unzip
+unzip <zip_file>
+
+// git push into a bare repo
+git remote add dep root@195.35.24.100:/home/apps/workspace-backend/repository.git
+
+// grant permission to user:
+chown -R username:usergroup /path/to/directory
+chmod -R u+rwX,g+rwX,o-rwx /path/to/directory 
+chmod -R u+rwX,g+rwX /path/to/directory 
+
+// list all users on ubuntu
+cut -d: -f1 /etc/passwd
+
+
+
+

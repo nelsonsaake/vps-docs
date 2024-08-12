@@ -1,0 +1,30 @@
+The configuration you provided is for setting up a TCP stream proxy in NGINX. The equivalent configuration in Apache for setting up a TCP proxy is using the `mod_proxy` module with the `ProxyPass` directive.
+
+Here's the equivalent configuration in Apache:
+
+```apache
+<VirtualHost *:80>
+    ServerName yourdomain.com
+
+    <Proxy *>
+        Allow from all
+    </Proxy>
+
+    ProxyPass /tcp-stream/ tcp://127.0.0.1:5432/
+    ProxyPassReverse /tcp-stream/ tcp://127.0.0.1:5432/
+</VirtualHost>
+```
+
+In this configuration:
+
+- `ProxyPass` directive is used to define the mapping of requests to the backend server.
+- `ProxyPassReverse` directive is used to adjust the URL in HTTP headers returned by the backend server.
+
+Ensure that the `mod_proxy` module is enabled in Apache:
+
+```bash
+sudo a2enmod proxy
+sudo systemctl restart apache2
+```
+
+After enabling and configuring `mod_proxy`, Apache will forward all requests received at `/tcp-stream/` to the TCP service running on `127.0.0.1:5432`. Adjust the configuration as needed for your specific use case and server setup.

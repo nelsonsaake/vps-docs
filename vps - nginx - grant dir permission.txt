@@ -1,0 +1,11 @@
+// change ownership
+sudo chown -R www-data:www-data /path/to/your/directory
+
+// set permission
+sudo chmod -R 755 /path/to/your/directory
+
+// verfiy permission
+ls -ld /path/to/your/directory
+// >> drwxr-xr-x 2 www-data www-data 4096 May 16 10:30 /path/to/your/directory
+
+

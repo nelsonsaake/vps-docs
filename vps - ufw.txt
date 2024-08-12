@@ -1,0 +1,19 @@
+# check allowed ports
+sudo ufw status
+
+# to allow traffic to port 8090
+sudo ufw allow 8090
+
+# to delete port from allow list
+sudo ufw delete allow 8090
+
+# to delete port from deny list
+sudo ufw delete deny 8090
+
+# check status for port 8090
+sudo ufw status | grep 8090
+
+# check if port 8090 has an allow status
+sudo ufw status | grep 8090 | grep ALLOW
+
+

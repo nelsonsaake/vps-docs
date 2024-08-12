@@ -1,0 +1,5 @@
+// for a user to able to login with vsftp is should be in the ftpuser group
+getnet group
+
+// add user to grpup
+sudo usermod -aG group_name username

@@ -1,0 +1,11 @@
+// update packages 
+sudo apt update
+
+// install nginx 
+sudo apt install nginx
+
+// start nginx --- that is if it doesn't start automatically
+sudo systemctl start nginx
+
+// let nginx start at start up
+sudo systemctl enable nginx

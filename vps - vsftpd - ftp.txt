@@ -1,0 +1,34 @@
+// update your package index 
+sudo apt update
+
+// install vsftpd
+sudo apt install vsftpd
+
+// vsftpd config file
+/etc/vsftpd.conf
+
+// allow anonymous vsftpd FTP access
+anonymous_enable=YES
+
+// all local users to access vsftpd FTP
+local_enable=YES
+
+// confined users to their home directories
+chroot_local_user=YES
+
+// vsftpd FTP default listening port 
+port 21 
+
+// change vsftpf default listening port 
+listen_port=22
+
+// restart vsftpd
+sudo systemctl restart vsftpd
+
+// open ufw ports for vsftpd to communicate to incomming traffic
+sudo ufw allow 20/tcp
+sudo ufw allow 21/tcp
+
+// test ftp 
+ftp your_server_ip_or_hostname
+

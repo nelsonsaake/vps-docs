@@ -1,0 +1,66 @@
+setup
+
+create a dir in /root/apps/<newapp>
+eg. mkdir /root/apps/newapp
+
+cd /root/apps/newapp
+
+mkdir repository.git
+
+cd repository.git
+
+git init --bare
+
+cd hooks 
+
+touch post-receive
+# edit the file in post-receive using a template
+
+chmod +x post-receive
+
+cd ../..
+
+mkdir log
+
+mkdir workingdirectory
+
+mkdir nginx 
+
+mkdir service
+
+touch nginx/newapp 
+# edit file with template
+
+touch service/marketplace.service
+# edit file with template
+
+sudo systemctl enable /root/apps/newapp/service/newapp.service
+eg. sudo systemctl enable /root/apps/attendance2000pb/service/attendance2000pb.service
+
+sudo ln -s /home/apps/app.readydeskghana.com/nginx/app.readydeskghana.com.nginx.conf /etc/nginx/sites-enabled/
+
+sudo systemctl restart nginx
+
+touch deploy.sh
+# edit file with template
+
+chmod +x deploy.sh
+
+touch setup.sh
+# edit file with template
+
+chmod +x setup.sh
+
+./setup.sh
+# do the first clone into the working directory 
+
+sudo systemctl start newapp
+
+touch log/access.log
+
+touch log/error.log
+
+systemctl daemon-reload
+
+sudo certbot certonly --nginx -d workspace-backend.kanea.homes
+

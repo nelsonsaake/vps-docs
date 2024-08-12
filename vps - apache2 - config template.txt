@@ -1,0 +1,7 @@
+<VirtualHost *:80>
+    ServerName subdomain.domain.com
+
+    ProxyPreserveHost On
+    ProxyPass / http://localhost:3001/
+    ProxyPassReverse / http://localhost:3001/
+</VirtualHost>

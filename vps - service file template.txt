@@ -1,0 +1,16 @@
+/etc/systemd/system/app.service
+
+[Unit]
+Description=Your Go Service
+After=network.target
+
+[Service]
+ExecStart=/path/to/your_service_name
+Restart=always
+User=nobody
+Group=nogroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=GO_ENV=production
+
+[Install]
+WantedBy=multi-user.target

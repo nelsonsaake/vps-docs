@@ -1,0 +1,14 @@
+# https://github.com/marketplace/actions/ssh-deploy
+# https://zellwk.com/blog/github-actions-deploy/
+
+# generate ssh private key
+ssh-keygen -m PEM -t rsa -b 4096
+
+# copy public key to `authorized_keys`
+nano npanel.pub >> /root/.ssh/authorized_keys
+
+# SSH_PRIVATE_KEY
+
+# REMOTE_HOST 
+
+# REMOTE_USER

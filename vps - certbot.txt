@@ -1,0 +1,21 @@
+// update apt packages
+sudo apt update
+
+// install certbot
+sudo apt install certbot
+
+// install nginx plugin for certbot
+sudo apt install python3-certbot-nginx
+
+// setup certbot for nginx
+sudo certbot --nginx
+
+// generate ssl for domain.com and update conf file
+sudo certbot --nginx -d <domain> -d www.<domain>
+
+// generate ssl but don't update conf file
+sudo certbot certonly --nginx -d <domain>
+
+// path of the generated certbot ssl
+cert /etc/letsencrypt/live/<domain>/fullchain.pem
+key /etc/letsencrypt/live/<domain>/privkey.pem

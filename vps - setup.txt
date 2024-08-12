@@ -1,0 +1,5 @@
+vps - setup 
+
+install apps
+
+enable vsftpd to write 

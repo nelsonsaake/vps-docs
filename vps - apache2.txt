@@ -1,0 +1,47 @@
+// the root host
+/var/www/html/
+
+// default apache2 index file
+/var/www/html/index.html
+
+// apache2 full config documentation
+/usr/share/doc/apache2/README.Debian.gz
+
+// apache2 base dir
+/etc/apache2/
+
+// apache2 main configuration file
+/etc/apache2/apache2.conf 
+
+// apache2 config file for listening to incoming trafic
+/etc/apache2/ports.conf
+
+// managing peices of apache2 config, look at the follow dirs
+/etc/apache2/mods-enabled/, /etc/apache2/conf-enabled/ and /etc/apache2/sites-enabled/
+
+// start apache2 
+systemctl start apache2
+
+// stop apache2
+systemctl stop apache2
+
+// check apache2 status
+systemctl status apache2
+
+// check apache2 status
+journalctl -u apache2
+
+// apache2 file used for whitelisting dir outside /var/www, public_html, /usr/share
+/etc/apache2/apache2.conf.
+
+// default ubuntu root
+/usr/share
+
+// virtual host dir
+/var/www
+
+// apache2 url
+http://httpd.apache.org/docs/2.4/mod/mod_userdir.html
+
+// apache2 bug reports url
+https://bugs.launchpad.net/ubuntu/+source/apache2

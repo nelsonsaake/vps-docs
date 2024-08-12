@@ -1,0 +1,6 @@
+// create symbolic link of the file to the sites-enabled dir
+sudo ln -s <path_to_config_file> /etc/nginx/sites-enabled
+
+// reload nginx
+sudo systemctl reload nginx
+

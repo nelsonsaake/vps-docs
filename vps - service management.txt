@@ -1,0 +1,107 @@
+# SERVICE MANAGEMENT 
+
+
+## BASICS
+
+### Enable Service
+
+ ```bash
+   sudo systemctl enable /root/apps/abc/your-service-name.service
+ ```
+
+### Start Service
+
+ ```bash
+   sudo systemctl start your-service-name
+ ```
+
+### Restart Service
+
+ ```bash
+   sudo systemctl restart your-service-name
+ ```
+
+### Stop Service
+
+ ```bash
+   sudo systemctl stop your-service-name
+ ```
+
+### Reload Service after upadate
+
+ ```bash
+   sudo systemctl daemon-reload
+ ```
+
+
+---
+
+
+## UPDATE A SERVICE
+
+To update a service
+
+1. edit file
+
+2. **Push Service Updates**: after every service update
+
+   ```bash
+   sudo systemctl daemon-reload
+   ```
+
+3. **Restart service**: restart service after update
+
+   ```bash
+   sudo systemctl restart service
+   ```
+
+
+---
+
+
+## REMOVE A SERVICE
+
+To remove a service (also known as a systemd unit) in Ubuntu, you can use the `systemctl` command. Here's how you can do it:
+
+1. **Stop the Service**: Before removing the service, it's a good practice to stop it if it's currently running. Use the following command to stop the service:
+
+   ```bash
+   sudo systemctl stop your-service-name
+   sudo systemctl stop  pb-01.service
+   sudo systemctl stop  pb-02.service
+   ```
+
+   Replace `your-service-name` with the actual name of your service.
+
+2. **Disable the Service**: Disabling the service prevents it from starting automatically on system boot. Use the following command to disable the service:
+
+   ```bash
+   sudo systemctl disable your-service-name
+   sudo systemctl disable  pb-01.service
+   sudo systemctl disable  pb-02.service
+   ```
+
+3. **Remove the Service**: Once the service is stopped and disabled, you can safely remove it. Use the following command:
+
+   ```bash
+   sudo rm /etc/systemd/system/your-service-name.service
+   sudo rm /lib/systemd/system/pb-01.service
+   sudo rm /lib/systemd/system/pb-02.service
+   ```
+
+   This command removes the systemd service file. Replace `your-service-name` with the actual name of your service.
+
+4. **Reload systemd**: After removing the service file, it's a good idea to reload systemd to ensure that it's aware of the changes. You can do this by running:
+
+   ```bash
+   sudo systemctl daemon-reload
+   ```
+
+5. **Clean Up**: Optionally, you may also want to clean up any leftover files or directories associated with your service.
+
+   ```bash
+   sudo rm -rf /path/to/your/service/files
+   ```
+
+   Replace `/path/to/your/service/files` with the actual path where your service files were located.
+

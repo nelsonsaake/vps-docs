@@ -1,0 +1,27 @@
+I want it to automatically setup a dir with all the folders
+I want it to generate a service file
+I want it to generate an nginx file
+I want it to automatically generate a port and configure that port with nginx
+I want it to a way to manage .env without
+
+---
+
+dir operations 
+- ls
+- cd
+
+file operations
+- nano
+- cat
+
+ip operations
+- ftp 
+- ssh 
+
+---
+
+ideally 
+
+you will setup a new db user for each db
+you will setup a new ftp user for each repo
+you will setup a new system user for each app

@@ -1,0 +1,11 @@
+// download composer
+curl -sS https://getcomposer.org/installer | php
+
+// copy composer to bin dir
+sudo cp composer.phar /usr/bin/composer
+
+// give composer file executable permission
+sudo chmod +x /usr/bin/composer
+
+// test to see if it working
+composer --version

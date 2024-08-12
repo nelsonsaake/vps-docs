@@ -1,0 +1,58 @@
+# note
+
+- github and your vps need to talk 
+- there needs to be an authentication
+- you will not be involved so this will have to be automated
+- you generate an ssh authentication key on the server,
+- put the public key into a github secret and login into github in the github/workflows
+- from that point you can run all the commands you want
+
+## generating the keypair on the serve
+
+   ssh-keygen
+
+- this will require
+  + file name
+    - if you specify and existing file the content will be overwritten
+  + this will require a password 
+
+
+## deploy script template
+
+This deploy uses sftp. Sftp is ftp powered by ssh.
+
+```
+
+name: Deploy via SFTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SFTP_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+
+    - name: Deploy files via SFTP
+      env:
+        SFTP_HOST: ${{ secrets.SFTP_HOST }}
+        SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+      run: |
+        sftp -o StrictHostKeyChecking=no $SFTP_USERNAME@$SFTP_HOST << 'EOF'
+        put -r . /path/to/deployment/directory
+        bye
+        EOF
+
+
+```

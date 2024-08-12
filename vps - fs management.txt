@@ -1,0 +1,87 @@
+// app dir
+/apps
+
+vps - files of interest
+
+// nginx config file
+/etc/nginx/nginx.conf
+
+// nginx log files
+/var/log/nginx/access.log
+
+// nginx error log files
+/var/log/nginx/error.log
+
+// default dir nginx sites
+/etc/nginx/sites-available
+
+// dir for service files - 1
+/etc/systemd/system/
+
+// serivce file - 1
+/etc/systemd/system/your-service-name.service
+
+// dir for service files - 2
+/lib/systemd/system/
+
+// serivce file - 2
+/lib/systemd/system/pb-01.service
+
+// vstpd config file
+/etc/vsftpd.conf
+
+// user info file 
+/etc/passwd
+
+// msql user password
+/root/.my.cnf
+
+// vsftpd log file
+/var/log/vsftpd.log
+
+// apache2 directory for storing config files for different websites
+/etc/apache2/sites-available/
+
+// apache2 sites, they are usually symbolic links from /etc/apache2/sites-available/
+/etc/apache2/sites-enabled/
+
+// apache2 error log file
+/var/log/apache2/error.log
+
+// mysql config file 
+/etc/mysql/mysql.conf.d/mysqld.cnf
+
+// mariadb mysql config files dir 
+/etc/mysql/mariadb.conf.d/
+
+// apache2 service file
+/lib/systemd/system/apache2.service
+
+// create a symbolic link
+sudo ln -s <path_to_file> <dir_of_the_new_symb_link>
+
+// debug file for certbot
+/var/log/letsencrypt/letsencrypt.log
+
+// proftpd conf
+/etc/proftpd/proftpd.conf
+
+// proftpd log file
+/var/log/proftpd/proftpd.log
+
+// proftpd new user
+sudo ftpasswd --passwd --name=username --uid=1001 --gid=1002 --home=/path/to/home/directory --shell=/bin/false
+
+// mysql config file
+/etc/mysql/my.cnf
+
+
+
+
+
+
+
+
+
+
+

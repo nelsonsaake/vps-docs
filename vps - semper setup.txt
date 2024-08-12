@@ -1,0 +1,38 @@
+vps - app setup
+
+setup new db user 
+
+setup new db user to talk over internet 
+
+dbt to new server db
+
+add .github/workflows/deploy.yml to project
+
+setup it up to build app into binary and push binary via ftp to server
+
+setup ftp on server
+
+enable write/upload
+
+create a new user for ftp purposes
+
+give your access to home directory from root directory as well as it's subfolders
+
+git add ., git commit, git push to github
+that would bild the code and push binary and other dependencies to ftp
+
+login into server add .env file
+
+add db info in .env file
+
+add port in .env file
+
+add apache2/nginx config
+
+enable reverse proxy with either apache2/nginx 
+
+restart apache2/nginx 
+
+setup a service to manage the app
+
+start server

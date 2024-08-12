@@ -1,0 +1,40 @@
+To point FTP to a specific directory on your server, you'll need to configure vsftpd to use that directory as the FTP root directory. This means that when users connect via FTP, they will be restricted to that directory and its subdirectories. Here's how you can do it:
+
+1. **Edit vsftpd Configuration**:
+
+   Open the vsftpd configuration file (`/etc/vsftpd.conf`) in a text editor:
+
+   ```bash
+   sudo nano /etc/vsftpd.conf
+   ```
+
+2. **Set the FTP Root Directory**:
+
+   Find the following line in the configuration file:
+
+   ```
+   #chroot_local_user=YES
+   ```
+
+   Uncomment this line (remove the `#` at the beginning) and set it to `YES`. This will chroot local users to their home directories. If you want to restrict users to a specific directory other than their home directory, you can set the `local_root` parameter. For example:
+
+   ```
+   chroot_local_user=YES
+   local_root=/path/to/your/directory
+   ```
+
+   Replace `/path/to/your/directory` with the absolute path to the directory you want to use as the FTP root directory.
+
+3. **Save the Changes**:
+
+   Save the changes to the configuration file and exit the text editor.
+
+4. **Restart vsftpd**:
+
+   Restart the vsftpd service to apply the changes:
+
+   ```bash
+   sudo systemctl restart vsftpd
+   ```
+
+Now, when users connect to your FTP server, they will be restricted to the directory specified as the FTP root directory (`/path/to/your/directory`). They won't be able to navigate outside of this directory or access files outside of it.

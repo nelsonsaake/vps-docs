@@ -1,0 +1,31 @@
+The error message indicates that the Apache `mod_proxy` module or its submodules might not be enabled. 
+
+To resolve this, you need to make sure that Apache's `mod_proxy` module and its submodules (`mod_proxy_http` in this case) are enabled.
+
+Here's how you can enable the required modules:
+
+1. **Enable `mod_proxy` Module**:
+   
+   Use the `a2enmod` command to enable the `mod_proxy` module:
+
+   ```bash
+   sudo a2enmod proxy
+   ```
+
+2. **Enable `mod_proxy_http` Module**:
+
+   Use the `a2enmod` command to enable the `mod_proxy_http` module, which is required for proxying HTTP requests:
+
+   ```bash
+   sudo a2enmod proxy_http
+   ```
+
+3. **Restart Apache**:
+
+   After enabling the required modules, restart Apache for the changes to take effect:
+
+   ```bash
+   sudo systemctl restart apache2
+   ```
+
+Now, Apache should be able to proxy requests to your GoLang application running on port 3001 without any errors. Make sure your GoLang application is running and accessible on port 3001.

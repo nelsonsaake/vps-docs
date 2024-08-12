@@ -1,0 +1,59 @@
+To point only a specific user to a specific directory path in vsftpd, you can use the `user_config_dir` directive along with per-user configuration files. This allows you to override certain vsftpd settings for individual users. Here's how you can do it:
+
+1. **Create User Configuration Directory**:
+
+   First, create a directory where you'll store per-user configuration files. This directory can be located anywhere on your system. For example:
+
+   ```bash
+   sudo mkdir /etc/vsftpd_user_conf
+   ```
+
+2. **Create User Configuration File**:
+
+   Inside the directory you created, create a configuration file for the specific user. The filename should match the username followed by `.conf`. For example, if the username is `ftpuser`, create a file named `ftpuser.conf`:
+
+   ```bash
+   sudo nano /etc/vsftpd_user_conf/ftpuser.conf
+   ```
+
+3. **Specify User-Specific Configuration**:
+
+   In the user-specific configuration file (`ftpuser.conf`), specify the desired settings, including the `local_root` directive to set the directory path for that user. For example:
+
+   ```
+   local_root=/path/to/user/directory
+   ```
+
+   Replace `/path/to/user/directory` with the absolute path to the directory you want to assign to this user.
+
+4. **Save the File and Exit**:
+
+   Save the changes to the user-specific configuration file and exit the text editor.
+
+5. **Adjust vsftpd Configuration**:
+
+   Open the vsftpd configuration file (`/etc/vsftpd.conf`) in a text editor:
+
+   ```bash
+   sudo nano /etc/vsftpd.conf
+   ```
+
+   Add or uncomment the `user_config_dir` directive and set it to the directory you created earlier:
+
+   ```
+   user_config_dir=/etc/vsftpd_user_conf
+   ```
+
+6. **Save the Changes**:
+
+   Save the changes to the vsftpd configuration file and exit the text editor.
+
+7. **Restart vsftpd**:
+
+   Restart the vsftpd service to apply the changes:
+
+   ```bash
+   sudo systemctl restart vsftpd
+   ```
+
+Now, when the user `ftpuser` connects to the FTP server, they will be restricted to the directory specified in their per-user configuration file (`/path/to/user/directory`). Other users will still follow the default vsftpd configuration.
