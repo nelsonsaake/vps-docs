@@ -1,0 +1,26 @@
+# Introduction
+PM2 is simple lightweight process manager used mostly for running apps (especially nodejs apps). It's similar to supervisord
+  
+# Pre-requisite
+Make sure nodejs is already installed on your system
+
+# Step 1
+sudo npm install pm2 -g
+
+# Step 2 - Let pm2 start up with the server
+sudo pm2 startup systemd
+
+# Top commands to use
+pm2 start <app/process name>
+pm2 stop <app/process name>
+pm2 list
+
+# live pm2 logs for the processes/apps can be seen with this command
+tail -f -n 30 /home/user/.pm2/logs/<app/process>-out.log
+
+# Running apps - Dotnet
+pm2 start --name 'phalco.gateways.users' '/home/webapps/.dotnet/dotnet /home/webapps/phalco.backend/src/Api/Phalco.Gateways.Users/bin/Release/net8.0/publish/Phalco.Gateways.Users.dll'
+
+# Running apps - Nodejs (NX NESTJS)
+pm2 start --name 'oaks.gateways.users' 'node -r dotenv/config /home/webapps/oaks/dist/apps/gateways.users/main.js'
+
