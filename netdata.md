@@ -1,0 +1,1 @@
+Netdata is an open-source, real-time performance monitoring tool designed to collect, visualize, and analyze data on system and application metrics. It provides real-time insights into the performance of a wide range of systems, including servers, containers, applications, databases, and network interfaces.
