@@ -1,0 +1,1 @@
+Hetzner is a well-known German company that provides web hosting, dedicated servers, virtual private servers (VPS), and cloud computing solutions. Founded in 1997, Hetzner is recognized for offering high-performance hosting services at competitive prices.

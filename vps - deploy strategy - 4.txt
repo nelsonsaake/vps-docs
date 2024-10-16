@@ -1,0 +1,11 @@
+# Deploy Guide for VPS
+
+- get domain to point to the VPS
+- setup the service and enable it 
+- setup a deploy script that will be executed after deploy "deploy.sh"
+- NB://
+  + run on deploy
+  + restart service after deploy
+  + remove all file so we don't maintain obselete files 
+  + exclude file and dirs that should be maintain accros restarts and deployments
+  + relink files.
